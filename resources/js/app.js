@@ -1,8 +1,6 @@
-// import './bootstrap';
-
 import App from '../js/myvue/App.vue'
-// import router from '../myvue/router/index.js'
 import router from './myvue/router'
+// import store from './myvue/store'
 // Composables
 import { createApp } from 'vue'
 import '@mdi/font/css/materialdesignicons.css'
@@ -21,5 +19,6 @@ const vuetify = createVuetify({
 })
 const app = createApp(App)
 app.use(router)
+// app.use(store)
 app.use(vuetify)
 app.mount('#app')

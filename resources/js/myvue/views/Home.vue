@@ -2,7 +2,7 @@
 <div class="my-card">
   <div>
     <v-container class="remove-all" fluid>
-  <v-row>
+  <v-row class="ma-0">
     <v-col>
       <v-sheet class="bg-grey-lighten-3 py-5 pl-2 text-blue-lighten-1 rounded border-left-5 text--primary" :elevation="3">
          <div class="text-h6 text-uppercase">Sales</div>
@@ -293,7 +293,6 @@ const items = ref([
   padding: 8px;
 }
 .my-card{
-  position: relative;
-  z-index: 5px;
+
 }
 </style>
