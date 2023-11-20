@@ -2,7 +2,7 @@
 <div class="my-card">
   <div>
     <v-container class="remove-all" fluid>
-  <v-row class="ma-0">
+  <v-row>
     <v-col>
       <v-sheet class="bg-grey-lighten-3 py-5 pl-2 text-blue-lighten-1 rounded border-left-5 text--primary" :elevation="3">
          <div class="text-h6 text-uppercase">Sales</div>
@@ -25,7 +25,7 @@
   <!--  -->
    <v-row>
     <v-col>
-      <v-sheet class="text-h2">Product's Table</v-sheet>
+      <v-sheet class="text-h4">Product's Table</v-sheet>
       <v-table
     fixed-header
     height="420px"
@@ -71,53 +71,12 @@
    <!--  -->
    <v-row>
     <v-col xl="4">
-      <!-- <form @submit.prevent="submit">
-    <v-text-field
-      v-model="name.value.value"
-      :counter="10"
-      :error-messages="name.errorMessage.value"
-      label="Name"
-    ></v-text-field>
-
-    <v-text-field
-      v-model="phone.value.value"
-      :counter="7"
-      :error-messages="phone.errorMessage.value"
-      label="Phone Number"
-    ></v-text-field>
-
-    <v-text-field
-      v-model="email.value.value"
-      :error-messages="email.errorMessage.value"
-      label="E-mail"
-    ></v-text-field>
-
-    <v-select
-      v-model="select.value.value"
-      :tableData="tableData"
-      :error-messages="select.errorMessage.value"
-      label="Select"
-    ></v-select>
-
-    <v-checkbox
-      v-model="checkbox.value.value"
-      :error-messages="checkbox.errorMessage.value"
-      value="1"
-      label="Option"
-      type="checkbox"
-    ></v-checkbox>
-
-    <v-btn
-      class="me-4"
-      type="submit"
-    >
-      submit
-    </v-btn>
-
-    <v-btn @click="handleReset">
-      clear
-    </v-btn>
-  </form> -->
+      <Bar
+        id="my-chart-id"
+        :options="chartOptions"
+        :data="chartData"
+        ref="bar"
+      />
     </v-col>
     <v-col>
       <v-table
@@ -169,9 +128,17 @@
 </template>
 
 <script setup>
-import { ref } from 'vue';
-
-
+import { ref,onMounted } from 'vue';
+import { Bar } from 'vue-chartjs'
+import { Chart as ChartJS, Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale } from 'chart.js'
+ChartJS.register(Title, Tooltip, Legend, BarElement, CategoryScale, LinearScale)
+const chartData = ref({
+        labels: [ 'January', 'February', 'March' ],
+        datasets: [ { data: [40, 20, 12] } ]
+      })
+const chartOptions = ref( {
+        responsive: true
+      })
 const items = ref([
   'Item 1',
   'Item 2',
@@ -285,6 +252,12 @@ const items = ref([
       calories: 55,
     },
   ]
+  const bar = ref(null)
+  onMounted(() => {
+      // Access the input element value using this.$refs.me.value
+      console.log(bar.value?.chart);
+    });
+// console.log()
 </script>
  
 <style scoped>

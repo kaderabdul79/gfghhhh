@@ -13,9 +13,11 @@
         "vite": "^4.0.0"
     },
     "dependencies": {
+        "chart.js": "^4.4.0",
         "pinia": "^2.1.7",
         "vee-validate": "^4.11.8",
         "vue": "^3.2.36",
+        "vue-chartjs": "^5.2.0",
         "vue-router": "^4.2.5",
         "vuetify": "^3.4.2"
     }

@@ -1,11 +1,11 @@
 <template>
     <v-app id="my-app">
-      <ListAllRouteHere />
-        <!--  -->
+      <!--  -->
         <v-main no-gutters>
             <router-view />
         </v-main>
         <!-- footer -->
+        <ListAllRouteHere />
     </v-app>
 </template>
 

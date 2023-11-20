@@ -1,6 +1,6 @@
-import App from '../js/myvue/App.vue'
-import router from './myvue/router'
-// import store from './myvue/store'
+import App from '../js/vue/App.vue'
+import router from './vue/router'
+// import store from './vue/store'
 // Composables
 import { createApp } from 'vue'
 import '@mdi/font/css/materialdesignicons.css'

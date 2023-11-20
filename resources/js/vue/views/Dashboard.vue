@@ -7,11 +7,14 @@
             permanent
             @click="rail = false"
         >
-            <v-list-item class="py-2" icon="mdi mdi-unfold-more-vertical" nav>
+        <v-list class="pa-0">
+        </v-list>
+            <v-list-item class="py-2" nav>
+                <span class="text-h4 text-center pa-3">Plumberz</span>
                 <template v-slot:append>
                     <v-btn
                         variant="flat"
-                        icon="mdi mdi-unfold-more-vertical"
+                        icon="mdi mdi-view-dashboard-outline"
                         @click.stop="rail = !rail"
                     ></v-btn>
                 </template>
@@ -64,7 +67,7 @@
         <!-- drawer -->
         <v-app-bar class="px-2" :elevation="2">
             <div class="my-header w-100">
-            <div>Abdul Kader</div>
+            <div class="pt-2">Abdul Kader</div>
             <div class="profile">
                 <v-avatar size="36px">
                     <v-img
@@ -86,9 +89,14 @@
                     </template>
                     <v-list>
                         <v-list-item
-                            prepend-icon="mdi-account-group-outline"
-                            title="Users"
+                            prepend-icon="mdi-account"
+                            title="Users Profile"
                             value="users"
+                        ></v-list-item>
+                        <v-list-item to="/logout"
+                            prepend-icon="mdi mdi-logout"
+                            title="Logout"
+                            value="Logout"
                         ></v-list-item>
                     </v-list>
                 </v-menu>
